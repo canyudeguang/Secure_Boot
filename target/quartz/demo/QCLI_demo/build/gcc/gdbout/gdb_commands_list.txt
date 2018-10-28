@@ -1,0 +1,2204 @@
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ./firmware_table.bin, offset=0 start_sector=0 num_sectors=1"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 0
+set jtag_prog_param.data_length = 1
+restore ./firmware_table.bin binary jtag_prog_param.data-0 0 4096
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/firmware_table.bin_readback, append=0 start_sector=0 num_sectors=1"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 0
+set jtag_prog_param.data_length = 1
+continue
+dump binary memory gdbout/firmware_table.bin_readback jtag_prog_param.data &jtag_prog_param.data[4096]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=0 start_sector=35 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 35
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-0 0 32768
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=32768 start_sector=43 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 43
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-32768 32768 65536
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=65536 start_sector=51 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 51
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-65536 65536 98304
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=98304 start_sector=59 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 59
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-98304 98304 131072
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=131072 start_sector=67 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 67
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-131072 131072 163840
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=163840 start_sector=75 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 75
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-163840 163840 196608
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=196608 start_sector=83 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 83
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-196608 196608 229376
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=229376 start_sector=91 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 91
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-229376 229376 262144
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=262144 start_sector=99 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 99
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-262144 262144 294912
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=294912 start_sector=107 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 107
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-294912 294912 327680
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=327680 start_sector=115 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 115
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-327680 327680 360448
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=360448 start_sector=123 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 123
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-360448 360448 393216
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=393216 start_sector=131 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 131
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-393216 393216 425984
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=425984 start_sector=139 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 139
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-425984 425984 458752
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=458752 start_sector=147 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 147
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-458752 458752 491520
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=491520 start_sector=155 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 155
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-491520 491520 524288
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=524288 start_sector=163 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 163
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-524288 524288 557056
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=557056 start_sector=171 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 171
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-557056 557056 589824
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=589824 start_sector=179 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 179
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-589824 589824 622592
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=622592 start_sector=187 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 187
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-622592 622592 655360
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=655360 start_sector=195 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 195
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-655360 655360 688128
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=688128 start_sector=203 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 203
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-688128 688128 720896
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=720896 start_sector=211 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 211
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-720896 720896 753664
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=753664 start_sector=219 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 219
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-753664 753664 786432
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=786432 start_sector=227 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 227
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-786432 786432 819200
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=819200 start_sector=235 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 235
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-819200 819200 851968
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=851968 start_sector=243 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 243
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-851968 851968 884736
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=884736 start_sector=251 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 251
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-884736 884736 917504
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=917504 start_sector=259 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 259
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-917504 917504 950272
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=950272 start_sector=267 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 267
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-950272 950272 983040
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=983040 start_sector=275 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 275
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-983040 983040 1015808
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1015808 start_sector=283 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 283
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1015808 1015808 1048576
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1048576 start_sector=291 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 291
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1048576 1048576 1081344
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1081344 start_sector=299 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 299
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1081344 1081344 1114112
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1114112 start_sector=307 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 307
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1114112 1114112 1146880
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1146880 start_sector=315 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 315
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1146880 1146880 1179648
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1179648 start_sector=323 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 323
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1179648 1179648 1212416
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1212416 start_sector=331 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 331
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1212416 1212416 1245184
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1245184 start_sector=339 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 339
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1245184 1245184 1277952
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1277952 start_sector=347 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 347
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1277952 1277952 1310720
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1310720 start_sector=355 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 355
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1310720 1310720 1343488
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1343488 start_sector=363 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 363
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1343488 1343488 1376256
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1376256 start_sector=371 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 371
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1376256 1376256 1409024
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1409024 start_sector=379 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 379
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1409024 1409024 1441792
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1441792 start_sector=387 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 387
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1441792 1441792 1474560
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1474560 start_sector=395 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 395
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1474560 1474560 1507328
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1507328 start_sector=403 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 403
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1507328 1507328 1540096
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1540096 start_sector=411 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 411
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1540096 1540096 1572864
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1572864 start_sector=419 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 419
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1572864 1572864 1605632
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1605632 start_sector=427 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 427
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1605632 1605632 1638400
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1638400 start_sector=435 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 435
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1638400 1638400 1671168
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1671168 start_sector=443 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 443
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1671168 1671168 1703936
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1703936 start_sector=451 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 451
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1703936 1703936 1736704
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1736704 start_sector=459 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 459
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1736704 1736704 1769472
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1769472 start_sector=467 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 467
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1769472 1769472 1802240
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1802240 start_sector=475 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 475
+set jtag_prog_param.data_length = 8
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1802240 1802240 1835008
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "WRITE ..\\..\\..\\..\\..\\quartz\\demo\\QCLI_demo\\build\\gcc\\4020\\m4/Quartz.elf, offset=1835008 start_sector=483 num_sectors=7"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 10
+set jtag_prog_param.addr = 483
+set jtag_prog_param.data_length = 7
+restore ..\..\..\..\..\quartz\demo\QCLI_demo\build\gcc\4020\m4/Quartz.elf binary jtag_prog_param.data-1835008 1835008 1863680
+continue
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=0 start_sector=35 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 35
+set jtag_prog_param.data_length = 8
+continue
+dump binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=43 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 43
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=51 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 51
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=59 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 59
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=67 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 67
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=75 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 75
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=83 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 83
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=91 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 91
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=99 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 99
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=107 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 107
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=115 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 115
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=123 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 123
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=131 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 131
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=139 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 139
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=147 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 147
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=155 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 155
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=163 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 163
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=171 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 171
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=179 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 179
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=187 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 187
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=195 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 195
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=203 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 203
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=211 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 211
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=219 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 219
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=227 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 227
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=235 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 235
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=243 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 243
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=251 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 251
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=259 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 259
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=267 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 267
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=275 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 275
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=283 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 283
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=291 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 291
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=299 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 299
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=307 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 307
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=315 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 315
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=323 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 323
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=331 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 331
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=339 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 339
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=347 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 347
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=355 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 355
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=363 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 363
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=371 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 371
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=379 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 379
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=387 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 387
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=395 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 395
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=403 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 403
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=411 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 411
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=419 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 419
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=427 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 427
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=435 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 435
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=443 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 443
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=451 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 451
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=459 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 459
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=467 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 467
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=475 num_sectors=8"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 475
+set jtag_prog_param.data_length = 8
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[32768]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status
+target remote localhost:3333
+load ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+file ../../../../../build/tools/flash/JTAGPROGRAMMER_IMG_ARNTRI.elf
+set $pc = jstorage_init
+set $sp = &jstorage_stack[sizeof(jstorage_stack)]
+set {int}0xE000ED94 = 0
+set {int}0x44000008 = 0
+break main_c
+continue
+echo "READ gdbout/Quartz.elf_readback, append=1 start_sector=483 num_sectors=7"
+set device_type = MEM_DEVICE_SPINOR
+set jtag_prog_param.cmd_status = 9
+set jtag_prog_param.addr = 483
+set jtag_prog_param.data_length = 7
+continue
+append binary memory gdbout/Quartz.elf_readback jtag_prog_param.data &jtag_prog_param.data[28672]
+append binary memory gdbout/jtagprogrammer.log output_buffer &output_buffer[output_buffer_length+1]
+set output_buffer_length = 0
+dump binary value gdbout/command_result.log jtag_prog_param.cmd_status

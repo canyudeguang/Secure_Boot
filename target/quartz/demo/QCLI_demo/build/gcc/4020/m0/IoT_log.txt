@@ -1,0 +1,104 @@
+Signing image: D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\bin\cortex-m0\threadx\ioe_ram_m0_threadx_ipt.mbn
+attestation_certificate_extensions = D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\sectools\qdn\resources\data_prov_assets\General_Assets\Signing\openssl\v3_attest.ext
+ca_certificate_extensions = D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\sectools\qdn\resources\data_prov_assets\General_Assets\Signing\openssl\v3.ext
+openssl_configfile = D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\sectools\qdn\resources\data_prov_assets\General_Assets\Signing\openssl\opensslroot.cfg
+Initialization 'Root' with dataprov. These fields might not be used in final output if overridden
+Using a predefined Root private key from: D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\sectools\qdn\resources\data_prov_assets\Signing\Local\qc_presigned_certs-key2048_exp257\qpsa_rootca.key
+Using a predefined Root certificate from: D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\sectools\qdn\resources\data_prov_assets\Signing\Local\qc_presigned_certs-key2048_exp257\qpsa_rootca.cer
+Initialization 'Attest' with dataprov. These fields might not be used in final output if overridden
+Using PKCS RSA padding
+Generating new certificate Attest
+Generating new Attestation certificate and a random key
+Adding OU fields to attest certificate.
+Generating new private/public key pair for Attest
+Creating certificate request for Attest
+Signing certificate request for Attest
+Creating signature
+
+Attestation Certificate Properties:
+| SW_ID                  | 0x0000000000000002  |
+| HW_ID                  | 0x40030000FFFF0000  |
+| IN_USE_SOC_HW_VERSION  | 0x0001              |
+| DEBUG                  | 0x0000000000000002  |
+| OEM_ID                 | 0xFFFF              |
+| SW_SIZE                | 616                 |
+| MODEL_ID               | 0x0000              |
+| SHA_ALGO               | SHA256              |
+| Exponent               | 257                 |
+
+Signed image is stored at D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\quartz\demo\QCLI_demo\build\gcc\4020\m0\ioe_ram_m0_threadx_ipt.mbn
+Image is signed
+Image D:\flamingo\QCA4020\git_hub_code\back\Secure_Boot\qca4020-or-2-0_qca_oem_sdk-cdb.git\target\quartz\demo\QCLI_demo\build\gcc\4020\m0\ioe_ram_m0_threadx_ipt.mbn signature is valid
+
+Base Properties: 
+| Integrity Check             | True  |
+| Signed                      | True  |
+| Size of signature           | 256   |
+| Size of one cert            | 2048  |
+| Num of certs in cert chain  | 2     |
+| Number of root certs        | 1     |
+| Maximum number of root certs| 1     |
+| Cert chain size             | 4096  |
+
+ELF Properties: 
+Elf Header: 
+| Magic                      | ELF                           |
+| Class                      | ELF32                          |
+| Data                       | 2's complement, little endian  |
+| Version                    | 1 (Current)                    |
+| OS/ABI                     | No extensions or unspecified   |
+| ABI Version                | 0                              |
+| Type                       | EXEC (Executable file)         |
+| Machine                    | Advanced RISC Machines ARM     |
+| Version                    | 0x1                            |
+| Entry address              | 0x0501c1c9                     |
+| Program headers offset     | 0x00000034                     |
+| Section headers offset     | 0x00000000                     |
+| Flags                      | 0x05000002                     |
+| ELF header size            | 52                             |
+| Program headers size       | 32                             |
+| Number of program headers  | 16                             |
+| Section headers size       | 40                             |
+| Number of section headers  | 0                              |
+| String table section index | 0                              |
+
+Elf Program Headers: 
+| S.No | Type | Offset | VirtAddr | PhysAddr | FileSize | MemSize |   Flags    | Align |
+|------|------|--------|----------|----------|----------|---------|------------|-------|
+|  1   | LOAD |0x047d4 |0x05000280|0x05000280|  0x3d30  |  0x3d30 | 0x00000005 | 0x4   |
+|  2   | LOAD |0x126f0 |0x05004000|0x05004000|  0x3f90  |  0x3f90 | 0x00000005 | 0x4   |
+|  3   | LOAD |0x041d8 |0x05008000|0x05008000|  0x0000  |  0x01ac | 0x00000006 | 0x8   |
+|  4   | LOAD |0x041d8 |0x05008280|0x05008280|  0x05fc  |  0x05fc | 0x00000005 | 0x4   |
+|  5   | LOAD |0x08898 |0x0500a980|0x0500a980|  0x03d8  |  0x03d8 | 0x00000006 | 0x4   |
+|  6   | LOAD |0x08504 |0x0500e9e8|0x0500e9e8|  0x0394  |  0x0394 | 0x00000005 | 0x4   |
+|  7   | LOAD |0x03000 |0x0500ed80|0x0500ed80|  0x11d8  |  0x11d8 | 0x00000006 | 0x4   |
+|  8   | LOAD |0x041d8 |0x0500ff80|0x0500ff80|  0x0000  |  0x0000 | 0x00000004 | 0x4   |
+|  9   | LOAD |0x041d8 |0x0500ffc0|0x0500ffc0|  0x0000  |  0x0000 | 0x00000004 | 0x4   |
+|  10  | LOAD |0x08c70 |0x05011c00|0x05011c00|  0x224c  |  0x224c | 0x00000006 | 0x4   |
+|  11  | LOAD |0x0aebc |0x05014c00|0x05014c00|  0x001c  |  0x001c | 0x00000006 | 0x4   |
+|  12  | LOAD |0x0aed8 |0x05014c40|0x05014c40|  0x0000  |  0x0000 | 0x00000004 | 0x4   |
+|  13  | LOAD |0x0aed8 |0x05014e00|0x05014e00|  0x0028  |  0x0028 | 0x00000004 | 0x4   |
+|  14  | LOAD |0x0af00 |0x05014e80|0x05014e80|  0x00d0  |  0x01dc | 0x00000006 | 0x8   |
+|  15  | LOAD |0x0afd0 |0x05015a80|0x05015a80|  0x7720  |  0x7720 | 0x80000005 | 0x4   |
+|  16  | LOAD |0x16680 |0x60000000|0x60000000|  0x0000  |  0x0000 | 0x00000004 | 0x4   |
+
+Hash Segment Properties: 
+| Header Size     | 40B     |
+| Hash Algorithm  | sha256  |
+
+Header: 
+| cert_chain_ptr  | 0x60000368  |
+| cert_chain_size | 0x00001000  |
+| code_size       | 0x00000240  |
+| flash_parti_ver | 0x00000003  |
+| image_dest_ptr  | 0x60000028  |
+| image_id        | 0x00000000  |
+| image_size      | 0x00001340  |
+| image_src       | 0x00000000  |
+| sig_ptr         | 0x60000268  |
+| sig_size        | 0x00000100  |
+
+SecElf Properties: 
+| image_type        | 0  |
+| max_elf_segments  | 100|
+
